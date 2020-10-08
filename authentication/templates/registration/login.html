@@ -1,0 +1,59 @@
+<style>
+		body{
+			background-color: #fff;
+			font-family: "Arial", sans-serif;
+			padding: 50px;
+		}
+		.container{
+			margin: 20px auto;
+			padding: 10px;
+			width: 300px;
+			height: auto;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+		 h1{
+		 	width: 70%;
+			color: black;
+			font-size: 32px;
+			margin: 28px auto;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		form{
+			text-align: center;
+		}
+		input{
+			padding: 12px 0;
+			margin-bottom: 5px;
+			border-radius: 3px;
+			border: 2px solid transparent;
+			text-align: center;
+			width: 90%;
+			font-size: 16px;
+			transition: border .2s, background-color .2s;
+			 background-color: #ECF0F1;
+		}
+		form button{
+			background-color: #3498DB;
+			color: #fff;
+			line-height: 40px;
+			cursor: pointer;
+			width:270px;
+			border: 0;
+		}
+		form button:hover,
+		form button:active {
+			background-color: #1F78B4;
+		}
+</style>
+
+
+<div class="container">
+			<h1>Login</h1>
+		<form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Log In</button>
+		</form>
+	</div>
