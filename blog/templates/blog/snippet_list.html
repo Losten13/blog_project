@@ -1,14 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class = "container">
-	<h1>Snippets</h1>
-	{% for snippet in object_list %}
-	<div>
-		<a href = '{{ snippet.get_absolute_url}}'><h3>{{ snippet.title }}</h3></a>
-		<p>{{ snippet.snippet_code }} </p>
-		{% empty %}
-		<li>No articles yet.</li>
+	{% for post in object_list %}
+	<div class="post">
+		<h2><a href="{{post.get_absolute_url}}">{{ post.title }}</a></h2>
+		<p>{{ post.snippet_code|linebreaksbr }}</p>
 	</div>
 	{% endfor %}
-</div>
 {% endblock %}
